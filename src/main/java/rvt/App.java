@@ -11,8 +11,8 @@ public class App {
 
         int i = 0;
         while (i < 25) {
-        ollie.study();
-        i = i + 1;
+            ollie.study();
+            i = i + 1;
         }
         System.out.println(ollie);
     }
