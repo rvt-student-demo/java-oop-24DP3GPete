@@ -40,6 +40,6 @@ public class App {
                     manager.remove(sc.next());
                 }
             }
-        } while (!choice.equals("exit") || !choice.equals("e"));
+        } while (!choice.equals("exit") && !choice.equals("e"));
     }
 }
