@@ -1,21 +1,29 @@
 package rvt;
+//package studentu.registracija; //???
 
-public class Student extends Person{
-    private int credits;
-    public Student(String name, String adress) {
-        super(name, adress);
+public class Student {
+    private String vards;
+    private String uzvards;
+    private String epasts;
+    private String persKods;
+    private String regLaiks;
+
+    public Student(String vards, String uzvards, String epasts, String persKods, String regLaiks) {
+        this.vards = vards;
+        this.uzvards = uzvards;
+        this.epasts = epasts;
+        this.persKods = persKods;
+        this.regLaiks = regLaiks;
     }
 
-    public void study() {
-            credits += 1;
-    }
+    // Getteri (nepieciešami tabulas izvadei un saglabāšanai)
+    public String getVards() { return vards; }
+    public String getUzvards() { return uzvards; }
+    public String getEpasts() { return epasts; }
+    public String getPersKods() { return persKods; }
+    public String getRegLaiks() { return regLaiks; }
 
-    public int credits() {
-        return credits;
-    }
-
-    @Override
-    public String toString() {
-        return this.getName() + "\n  " + this.getAdress() + "\n  Study credits: " + this.credits;
+    public String toCsvRow() {
+        return String.join(",", vards, uzvards, epasts, persKods, regLaiks);
     }
 }
