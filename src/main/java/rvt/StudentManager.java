@@ -67,4 +67,49 @@ public class StudentManager {
             System.out.println("[X] Students ar sadu personas kodu netika atrasts.");
         }
     }
+
+    public void update(String pk, Scanner sc) {
+        Student student = students.stream()
+                .filter(s -> s.getPersKods().equals(pk))
+                .findFirst()
+                .orElse(null);
+
+        if (student == null) {
+            System.out.println("[X] Students ar sadu personas kodu netika atrasts.");
+            return;
+        }
+
+        System.out.println("\n--- Studenta datu maina (personas kods: " + pk + ") ---");
+        System.out.println("Ievadi '-' lai izlaistu lauku:");
+        
+        System.out.print("Vards (" + student.getVards() + "): ");
+        String vards = sc.next();
+        if (!vards.equals("-") && Validator.isValidName(vards)) {
+            student.setVards(vards);
+        } else if (!vards.equals("-")) {
+            System.out.println("[X] Vards neatbilst prasibam.");
+            return;
+        }
+
+        System.out.print("Uzvards (" + student.getUzvards() + "): ");
+        String uzvards = sc.next();
+        if (!uzvards.equals("-") && Validator.isValidName(uzvards)) {
+            student.setUzvards(uzvards);
+        } else if (!uzvards.equals("-")) {
+            System.out.println("[X] Uzvards neatbilst prasibam.");
+            return;
+        }
+
+        System.out.print("E-pasts (" + student.getEpasts() + "): ");
+        String epasts = sc.next();
+        if (!epasts.equals("-") && Validator.isValidEmail(epasts)) {
+            student.setEpasts(epasts);
+        } else if (!epasts.equals("-")) {
+            System.out.println("[X] E-pasts neatbilst prasibam.");
+            return;
+        }
+
+        FileHandler.saveStudents(students);
+        System.out.println("[V] Studenta dati veiksmigi atjaunoti!");
+    }
 }

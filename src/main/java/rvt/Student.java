@@ -23,6 +23,11 @@ public class Student {
     public String getPersKods() { return persKods; }
     public String getRegLaiks() { return regLaiks; }
 
+    // Setteri (nepieciešami datu maiņai)
+    public void setVards(String vards) { this.vards = vards; }
+    public void setUzvards(String uzvards) { this.uzvards = uzvards; }
+    public void setEpasts(String epasts) { this.epasts = epasts; }
+
     public String toCsvRow() {
         return String.join(",", vards, uzvards, epasts, persKods, regLaiks);
     }

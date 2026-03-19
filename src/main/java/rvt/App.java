@@ -23,7 +23,7 @@ public class App {
         String choice;
 
         do {
-            System.out.println("\nIzvele: register | show | delete | exit");
+            System.out.println("\nIzvele: register | show | change | delete | exit");
             choice = sc.next().toLowerCase();
 
             switch (choice) {
@@ -31,6 +31,14 @@ public class App {
                 case "r" -> manager.register(sc);
                 case "show" -> manager.showAll();
                 case "s" -> manager.showAll();
+                case "change" -> {
+                    System.out.print("Ievadi personas kodu mainai: ");
+                    manager.update(sc.next(), sc);
+                }
+                case "c" -> {
+                    System.out.print("Ievadi personas kodu mainai: ");
+                    manager.update(sc.next(), sc);
+                }
                 case "delete" -> {
                     System.out.print("Ievadi personas kodu dzesanai: ");
                     manager.remove(sc.next());
