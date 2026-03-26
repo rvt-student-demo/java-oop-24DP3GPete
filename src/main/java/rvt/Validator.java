@@ -1,5 +1,4 @@
 package rvt;
-//package studentu.registracija;
 
 import java.util.regex.Pattern;
 

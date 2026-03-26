@@ -1,5 +1,4 @@
 package rvt;
-//package studentu.registracija; //???
 
 public class Student {
     private String vards;
