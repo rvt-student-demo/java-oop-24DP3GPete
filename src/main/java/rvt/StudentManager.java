@@ -19,7 +19,7 @@ public class StudentManager {
 
         // 1. Definējam tabulas rāmja līnijas un kolonnu platumus
         // + (17 svītras) + (17 svītras) + (27 svītras) + (17 svītras) + (22 svītras) +
-        String horizontalLine = "+-----------------+-----------------+---------------------------+-----------------+----------------------+";
+        String horizontalLine = "\u001B[31m+-----------------+-----------------+---------------------------+-----------------+----------------------+\u001B[0m";
         // Definējam formātu: %-15s nozīmē tekstu, kas izlīdzināts pa kreisi 15 rakstzīmju platumā
         String rowFormat = "| %-15s | %-15s | %-25s | %-15s | %-20s |%n";
 
